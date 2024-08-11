@@ -771,15 +771,15 @@
       "locked": {
         "lastModified": 1723419051,
         "narHash": "sha256-vHOcS2XYZMaDwYiwDvxH1TmYC82fCGC4LUETCOHMpY8=",
-        "ref": "refs/heads/master",
+        "owner": "xvrqt",
+        "repo": "niri-flake",
         "rev": "42a9e21a97665623534077ceddf08897d8ab7fd1",
-        "revCount": 13,
-        "type": "git",
-        "url": "file:///home/xvrqt/dev/niri-flake"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/xvrqt/dev/niri-flake"
+        "owner": "xvrqt",
+        "repo": "niri-flake",
+        "type": "github"
       }
     },
     "niri-stable": {
