@@ -9,7 +9,6 @@
 
     # My Flakes
     cli.url = "github:xvrqt/cli-flake";
-    #niri.url = "/home/xvrqt/dev/niri-flake";
     niri.url = "github:xvrqt/niri-flake";
 
     # 3rd Party Flakes
