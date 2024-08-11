@@ -2,10 +2,22 @@
   "nodes": {
     "cachix": {
       "inputs": {
-        "devenv": ["niri", "niri", "crate2nix"],
-        "flake-compat": ["niri", "niri", "crate2nix"],
+        "devenv": [
+          "niri",
+          "niri",
+          "crate2nix"
+        ],
+        "flake-compat": [
+          "niri",
+          "niri",
+          "crate2nix"
+        ],
         "nixpkgs": "nixpkgs_2",
-        "pre-commit-hooks": ["niri", "niri", "crate2nix"]
+        "pre-commit-hooks": [
+          "niri",
+          "niri",
+          "crate2nix"
+        ]
       },
       "locked": {
         "lastModified": 1709700175,
@@ -24,10 +36,25 @@
     },
     "cachix_2": {
       "inputs": {
-        "devenv": ["niri", "niri", "crate2nix", "crate2nix_stable"],
-        "flake-compat": ["niri", "niri", "crate2nix", "crate2nix_stable"],
+        "devenv": [
+          "niri",
+          "niri",
+          "crate2nix",
+          "crate2nix_stable"
+        ],
+        "flake-compat": [
+          "niri",
+          "niri",
+          "crate2nix",
+          "crate2nix_stable"
+        ],
         "nixpkgs": "nixpkgs_3",
-        "pre-commit-hooks": ["niri", "niri", "crate2nix", "crate2nix_stable"]
+        "pre-commit-hooks": [
+          "niri",
+          "niri",
+          "crate2nix",
+          "crate2nix_stable"
+        ]
       },
       "locked": {
         "lastModified": 1716549461,
@@ -227,7 +254,13 @@
     "devshell_2": {
       "inputs": {
         "flake-utils": "flake-utils_3",
-        "nixpkgs": ["niri", "niri", "crate2nix", "crate2nix_stable", "nixpkgs"]
+        "nixpkgs": [
+          "niri",
+          "niri",
+          "crate2nix",
+          "crate2nix_stable",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1717408969,
@@ -246,7 +279,12 @@
     "devshell_3": {
       "inputs": {
         "flake-utils": "flake-utils_4",
-        "nixpkgs": ["niri", "niri", "crate2nix", "nixpkgs"]
+        "nixpkgs": [
+          "niri",
+          "niri",
+          "crate2nix",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1711099426,
@@ -387,7 +425,12 @@
     },
     "flake-parts_3": {
       "inputs": {
-        "nixpkgs-lib": ["niri", "niri", "crate2nix", "nixpkgs"]
+        "nixpkgs-lib": [
+          "niri",
+          "niri",
+          "crate2nix",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1712014858,
@@ -615,7 +658,13 @@
     },
     "gitignore_3": {
       "inputs": {
-        "nixpkgs": ["niri", "niri", "crate2nix", "pre-commit-hooks", "nixpkgs"]
+        "nixpkgs": [
+          "niri",
+          "niri",
+          "crate2nix",
+          "pre-commit-hooks",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1709087332,
@@ -633,7 +682,9 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": ["nixpkgs"]
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1723399884,
@@ -666,7 +717,11 @@
     },
     "naersk": {
       "inputs": {
-        "nixpkgs": ["nvf", "rnix-lsp", "nixpkgs"]
+        "nixpkgs": [
+          "nvf",
+          "rnix-lsp",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1655042882,
@@ -684,8 +739,14 @@
     },
     "nil": {
       "inputs": {
-        "flake-utils": ["nvf", "flake-utils"],
-        "nixpkgs": ["nvf", "nixpkgs"],
+        "flake-utils": [
+          "nvf",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nvf",
+          "nixpkgs"
+        ],
         "rust-overlay": "rust-overlay"
       },
       "locked": {
@@ -710,10 +771,11 @@
       "locked": {
         "lastModified": 1723419051,
         "narHash": "sha256-vHOcS2XYZMaDwYiwDvxH1TmYC82fCGC4LUETCOHMpY8=",
-        "owner": "xvrqt",
-        "repo": "niri-flake",
+        "ref": "refs/heads/master",
         "rev": "42a9e21a97665623534077ceddf08897d8ab7fd1",
-        "type": "github"
+        "revCount": 13,
+        "type": "git",
+        "url": "file:///home/xvrqt/dev/niri-flake"
       },
       "original": {
         "type": "git",
@@ -2861,7 +2923,13 @@
           "flake-compat"
         ],
         "gitignore": "gitignore_2",
-        "nixpkgs": ["niri", "niri", "crate2nix", "crate2nix_stable", "nixpkgs"],
+        "nixpkgs": [
+          "niri",
+          "niri",
+          "crate2nix",
+          "crate2nix_stable",
+          "nixpkgs"
+        ],
         "nixpkgs-stable": [
           "niri",
           "niri",
@@ -2886,11 +2954,26 @@
     },
     "pre-commit-hooks_3": {
       "inputs": {
-        "flake-compat": ["niri", "niri", "crate2nix", "flake-compat"],
+        "flake-compat": [
+          "niri",
+          "niri",
+          "crate2nix",
+          "flake-compat"
+        ],
         "flake-utils": "flake-utils_5",
         "gitignore": "gitignore_3",
-        "nixpkgs": ["niri", "niri", "crate2nix", "nixpkgs"],
-        "nixpkgs-stable": ["niri", "niri", "crate2nix", "nixpkgs"]
+        "nixpkgs": [
+          "niri",
+          "niri",
+          "crate2nix",
+          "nixpkgs"
+        ],
+        "nixpkgs-stable": [
+          "niri",
+          "niri",
+          "crate2nix",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1712055707,
@@ -2938,8 +3021,16 @@
     },
     "rust-overlay": {
       "inputs": {
-        "flake-utils": ["nvf", "nil", "flake-utils"],
-        "nixpkgs": ["nvf", "nil", "nixpkgs"]
+        "flake-utils": [
+          "nvf",
+          "nil",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nvf",
+          "nil",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1714529851,
@@ -2957,7 +3048,9 @@
     },
     "rust-overlay_2": {
       "inputs": {
-        "nixpkgs": ["nixpkgs"]
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1723343015,
