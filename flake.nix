@@ -9,14 +9,15 @@
 
     # My Flakes
     cli.url = "github:xvrqt/cli-flake";
-    niri.url = "github:xvrqt/niri-flake";
+    niri.url = "/home/xvrqt/dev/niri-flake";
+    #niri.url = "github:xvrqt/niri-flake";
 
     # 3rd Party Flakes
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvf.url = "github:notashelf/nvf";
+    nvf.url = "github:notashelf/nvf/v0.7";
   };
 
   outputs = {

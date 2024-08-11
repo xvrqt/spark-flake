@@ -1,8 +1,4 @@
-{
-  pkgs,
-  machine,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     # Include the results of the hardware scan.
     ./nixos/hardware-configuration.nix
@@ -23,6 +19,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
   # Prevents us from needing to use impure evaluation
+  # Normally loads from the EFI volume, but we copy it locally
   hardware.asahi.peripheralFirmwareDirectory = ./firmware;
 
   # Set your time zone.
@@ -32,26 +29,7 @@
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
     font = "Lat2-Terminus16";
-    useXkbConfig = true; # use xkb.options in tty.
-  };
-  # Networking
-  networking = {
-    hostName = machine; # "Spark"
-    # Enable WiFi but use iwd instead of wpa_supplicant for Mac Compatibility
-    networkmanager = {
-      enable = true;
-      wifi.backend = "iwd";
-    };
-    # Automatically connect to known networks
-    wireless.iwd = {
-      enable = true;
-      settings = {
-        General.EnableNetworkConfiguration = true;
-        Settings = {
-          AutoConnect = true;
-        };
-      };
-    };
+    useXkbConfig = true; # use xkb.options in TTY
   };
 
   # Enable our shell
@@ -82,6 +60,9 @@
     };
     rtkit.enable = true;
   };
+
+  # Additional Packages
+  environment.systemPackages = [pkgs.vim];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

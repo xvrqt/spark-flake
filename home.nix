@@ -4,6 +4,8 @@ in {
   imports = [
     # NeoVim Customization
     ./home/nvf.nix
+    # EWWW Configuration
+    ./home/eww
   ];
 
   programs = {
@@ -14,10 +16,27 @@ in {
     zsh.enable = true;
 
     # Terminal Emulator
-    alacritty.enable = true;
+    alacritty = {
+      enable = true;
+      settings = {
+        import = ["/home/amy/.config/alacritty/theme.toml"];
+        shell.args = ["--login"];
+        shell.program = "${pkgs.zsh}/bin/zsh";
+      };
+    };
 
     # Browser
-    librewolf.enable = true;
+    librewolf = {
+      enable = true;
+      settings = {
+        "webgl.disabled" = false;
+        "privacy.resistFingerprinting" = false;
+        "privacy.clearOnShutdown.history" = false;
+        "privacy.clearOnShutdown.cookies" = false;
+      };
+    };
+    rofi.enable = true;
+    rofi.package = pkgs.rofi-wayland;
   };
 
   home = {
@@ -26,7 +45,9 @@ in {
     homeDirectory = "/home/${user}";
     stateVersion = "24.05"; # Please read the comment before changing.
 
-    file = {};
+    file = {
+      ".config/alacritty/theme.yml".source = ./themes/catppuccin-mocha.yml;
+    };
     sessionVariables = {};
   };
 
