@@ -25,6 +25,7 @@
     niri,
     nixpkgs,
     home-manager,
+    rust-overlay,
     ...
   } @ inputs: let
     system = "aarch64-linux";
@@ -33,16 +34,21 @@
     nixosConfigurations.${machine} = nixpkgs.lib.nixosSystem {
       inherit system;
       specialArgs = {inherit inputs machine;};
-      # extraSpecialArgs = {inherit inputs machine;};
       modules = [
         # Window Manager
         niri.nixosModules.default
+        # Rust
+        ({pkgs, ...}: {
+          nixpkgs.overlays = [rust-overlay.overlays.default];
+          environment.systemPackages = [pkgs.wasm-pack ((pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml).override {extensions = ["rust-src"];})];
+        })
         # Main NixOS Module - pulls in sub-modules in ./nixos
         ./spark.nix
         # Home Manager as a NixOS Modules (contains sub-modules)
         home-manager.nixosModules.home-manager
         {
           home-manager = {
+            extraSpecialArgs = {inherit inputs machine;};
             useGlobalPkgs = true;
             useUserPackages = true;
             users.xvrqt = {...}: {

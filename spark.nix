@@ -62,7 +62,12 @@
   };
 
   # Additional Packages
-  environment.systemPackages = [pkgs.vim];
+  environment.systemPackages = [
+    pkgs.vim
+    pkgs.glslls
+    pkgs.glsl_analyzer
+    pkgs.glslviewer
+  ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

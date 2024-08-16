@@ -14,6 +14,7 @@ in {
 
     # Shell
     zsh.enable = true;
+    direnv.enable = true;
 
     # Terminal Emulator
     alacritty = {
@@ -44,6 +45,9 @@ in {
     username = user;
     homeDirectory = "/home/${user}";
     stateVersion = "24.05"; # Please read the comment before changing.
+
+    packages = [
+    ];
 
     file = {
       ".config/alacritty/theme.yml".source = ./themes/catppuccin-mocha.yml;

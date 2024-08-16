@@ -1,5 +1,10 @@
 # Customize my NeoVim instance
 {
+  lib,
+  pkgs,
+  inputs,
+  ...
+}: {
   programs.nvf = {
     enable = true;
 
@@ -7,6 +12,9 @@
       vim = {
         viAlias = false;
         vimAlias = true;
+        luaConfigPost = ''
+          require('lspconfig').glsl_analyzer.setup{}
+        '';
         debugMode = {
           enable = false;
           level = 16;
@@ -24,6 +32,7 @@
           trouble.enable = false;
           lspSignature.enable = true;
           lsplines.enable = true;
+          lspconfig.enable = true;
           nvim-docs-view.enable = true;
         };
 
@@ -40,13 +49,17 @@
           enableTreesitter = true;
           enableExtraDiagnostics = true;
 
+          ts.enable = true;
           nix.enable = true;
-          html.enable = true;
           css.enable = true;
+          html.enable = true;
           bash.enable = true;
           rust = {
             enable = true;
+            lsp.enable = true;
+            dap.enable = true;
             crates.enable = true;
+            format.enable = true;
           };
         };
 
@@ -189,4 +202,3 @@
     };
   };
 }
-
