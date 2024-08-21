@@ -12,6 +12,8 @@ in {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
 
+    termusic.enable = false; # not building
+
     # Shell
     zsh.enable = true;
     direnv.enable = true;

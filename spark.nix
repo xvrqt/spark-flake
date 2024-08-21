@@ -58,6 +58,14 @@
       enable = true;
       wheelNeedsPassword = false;
     };
+    pam.loginLimits = [
+      {
+        domain = "*";
+        type = "soft";
+        item = "nofile";
+        value = "8192";
+      }
+    ];
     rtkit.enable = true;
   };
 
