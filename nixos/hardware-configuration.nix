@@ -67,5 +67,13 @@
       # Rebuilds the world - but allows us to have a 'pure' eval
       experimentalGPUInstallMode = "overlay";
     };
+    bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
+  };
+
+  services = {
+    blueman.enable = true;
   };
 }
