@@ -16,7 +16,7 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvf.url = "github:notashelf/nvf/v0.7";
+    nvf.url = "github:notashelf/nvf";
   };
 
   outputs = {
