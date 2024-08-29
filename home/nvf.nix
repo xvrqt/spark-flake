@@ -1,10 +1,5 @@
 # Customize my NeoVim instance
 {
-  lib,
-  pkgs,
-  inputs,
-  ...
-}: {
   programs.nvf = {
     enable = true;
 
@@ -46,7 +41,7 @@
         languages = {
           enableLSP = true;
           enableFormat = true;
-          enableTreesitter = true;
+          enableTreesitter = false;
           enableExtraDiagnostics = true;
 
           ts.enable = true;
