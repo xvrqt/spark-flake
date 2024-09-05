@@ -11,9 +11,6 @@
     rust.url = "github:xvrqt/rust-flake";
     niri.url = "github:xvrqt/niri-flake";
     terminal.url = "github:xvrqt/terminal-flake";
-
-    # 3rd Party Flakes
-    neovim.url = "github:xvrqt/neovim-flake";
   };
 
   outputs = {
@@ -34,7 +31,7 @@
         # Window Manager
         niri.nixosModules.default
         # Rust Programming Language Toolchain
-        rust.nixosModules.default
+        # rust.nixosModules.default
         # Main NixOS Module - pulls in sub-modules in ./nixos
         ./spark.nix
         # Home Manager as a NixOS Modules (contains sub-modules)

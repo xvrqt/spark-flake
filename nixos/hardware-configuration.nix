@@ -33,6 +33,7 @@
 
   # Networking
   networking = {
+    nameservers = ["1.1.1.1" "9.9.9.9"];
     hostName = machine; # "Spark"
     # Enable WiFi but use iwd instead of wpa_supplicant for Mac Compatibility
     networkmanager = {

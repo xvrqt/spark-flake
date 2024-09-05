@@ -9,13 +9,13 @@
     # Fonts to install
     ./nixos/fonts.nix
     # Configure the Rust Toolchain
-    ./nixos/rust.nix
+    # ./nixos/rust.nix
   ];
 
-  rust = {
-    enable = true;
-    flavor = "stable";
-  };
+  # rust = {
+  #   enable = true;
+  #   flavor = "stable";
+  # };
 
   # Enable the use of flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];

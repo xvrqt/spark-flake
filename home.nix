@@ -52,9 +52,9 @@ in {
     packages = [
     ];
 
-    file = {
-      ".config/alacritty/theme.yml".source = ./themes/catppuccin-mocha.yml;
-    };
+    # file = {
+    #   ".config/alacritty/theme.yml".source = ./themes/catppuccin-mocha.yml;
+    # };
     sessionVariables = {};
   };
 
