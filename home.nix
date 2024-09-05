@@ -2,8 +2,6 @@
   user = "xvrqt";
 in {
   imports = [
-    # NeoVim Customization
-    ./home/nvf.nix
     # EWWW Configuration
     ./home/eww
   ];
@@ -38,6 +36,9 @@ in {
         "privacy.clearOnShutdown.cookies" = false;
       };
     };
+    neovim.plugins = [
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+    ];
     rofi.enable = true;
     rofi.package = pkgs.rofi-wayland;
   };

@@ -16,12 +16,12 @@
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nvf.url = "github:notashelf/nvf";
+    neovim.url = "github:xvrqt/neovim-flake";
   };
 
   outputs = {
     cli,
-    nvf,
+    neovim,
     niri,
     nixpkgs,
     home-manager,
@@ -58,7 +58,7 @@
                 # Window Manager
                 niri.homeManagerModules.${machine}
                 # Highly Customized NeoVim
-                nvf.homeManagerModules.default
+                neovim.homeManagerModules.${system}.default
                 # Main Home Manager Module - pulls in sub-modules from ./home
                 ./home.nix
               ];
