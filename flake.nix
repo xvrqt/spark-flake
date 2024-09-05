@@ -8,24 +8,20 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # My Flakes
-    cli.url = "github:xvrqt/cli-flake";
+    rust.url = "github:xvrqt/rust-flake";
     niri.url = "github:xvrqt/niri-flake";
+    terminal.url = "github:xvrqt/terminal-flake";
 
     # 3rd Party Flakes
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     neovim.url = "github:xvrqt/neovim-flake";
   };
 
   outputs = {
-    cli,
-    neovim,
+    rust,
     niri,
+    terminal,
     nixpkgs,
     home-manager,
-    rust-overlay,
     ...
   } @ inputs: let
     system = "aarch64-linux";
@@ -37,11 +33,8 @@
       modules = [
         # Window Manager
         niri.nixosModules.default
-        # Rust
-        ({pkgs, ...}: {
-          nixpkgs.overlays = [rust-overlay.overlays.default];
-          environment.systemPackages = [pkgs.wasm-pack ((pkgs.rust-bin.fromRustupToolchainFile ./rust-toolchain.toml).override {extensions = ["rust-src"];})];
-        })
+        # Rust Programming Language Toolchain
+        rust.nixosModules.default
         # Main NixOS Module - pulls in sub-modules in ./nixos
         ./spark.nix
         # Home Manager as a NixOS Modules (contains sub-modules)
@@ -54,11 +47,9 @@
             users.xvrqt = {...}: {
               imports = [
                 # Shell Customization & Useful Command Programs
-                cli.homeManagerModules.default
+                terminal.homeManagerModules.${system}.default
                 # Window Manager
                 niri.homeManagerModules.${machine}
-                # Highly Customized NeoVim
-                neovim.homeManagerModules.${system}.default
                 # Main Home Manager Module - pulls in sub-modules from ./home
                 ./home.nix
               ];

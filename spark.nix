@@ -12,6 +12,11 @@
     ./nixos/rust.nix
   ];
 
+  rust = {
+    enable = true;
+    flavor = "stable";
+  };
+
   # Enable the use of flakes
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
