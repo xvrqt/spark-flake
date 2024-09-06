@@ -55,11 +55,11 @@
     #	hashedPassword = "$y$j9T$aclS.QcZOPfxXBn3pa7aN/$cjLpl6MrpmGmCzQRWQxLW9DEKxhOnWLPCqMSvFqUR.";
   };
   services.getty.autologinUser = "xvrqt";
-  # services.xserver = {
-  #   enable = true;
-  #   displayManager.gdm.enable = true;
-  #   desktopManager.gnome.enable = true;
-  # };
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
 
   security = {
     sudo = {
