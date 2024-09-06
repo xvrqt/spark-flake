@@ -8,8 +8,6 @@
     ./nixos/services
     # Fonts to install
     ./nixos/fonts.nix
-    # Configure the Rust Toolchain
-    # ./nixos/rust.nix
   ];
 
   # rust = {
@@ -57,6 +55,11 @@
     #	hashedPassword = "$y$j9T$aclS.QcZOPfxXBn3pa7aN/$cjLpl6MrpmGmCzQRWQxLW9DEKxhOnWLPCqMSvFqUR.";
   };
   services.getty.autologinUser = "xvrqt";
+  # services.xserver = {
+  #   enable = true;
+  #   displayManager.gdm.enable = true;
+  #   desktopManager.gnome.enable = true;
+  # };
 
   security = {
     sudo = {
