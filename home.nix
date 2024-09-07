@@ -9,22 +9,13 @@ in {
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
+    # Enable our shell
+    zsh.enable = true;
+    direnv.enable = true;
 
     termusic.enable = false; # not building
 
     # Shell
-    zsh.enable = true;
-    direnv.enable = true;
-
-    # Terminal Emulator
-    alacritty = {
-      enable = true;
-      settings = {
-        import = ["/home/amy/.config/alacritty/theme.toml"];
-        shell.args = ["--login"];
-        shell.program = "${pkgs.zsh}/bin/zsh";
-      };
-    };
 
     # Browser
     librewolf = {

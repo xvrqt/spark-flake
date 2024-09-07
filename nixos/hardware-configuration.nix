@@ -25,6 +25,11 @@
     fsType = "ext4";
   };
 
+  # fileSystems."/home/xvrqt" = {
+  #   device = "/dev/disk/by-uuid/27c2bc00-7fd6-4ca4-85d9-242bab0bf6f6";
+  #   fsType = "ext4";
+  # };
+
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/83E6-1413";
     fsType = "vfat";
