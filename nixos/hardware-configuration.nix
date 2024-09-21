@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   machine,
   modulesPath,
   ...
@@ -25,10 +26,10 @@
     fsType = "ext4";
   };
 
-#  fileSystems."/p2" = {
-#    device = "/dev/disk/by-uuid/27c2bc00-7fd6-4ca4-85d9-242bab0bf6f6";
-#    fsType = "ext4";
-#  };
+  #  fileSystems."/p2" = {
+  #    device = "/dev/disk/by-uuid/27c2bc00-7fd6-4ca4-85d9-242bab0bf6f6";
+  #    fsType = "ext4";
+  #  };
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/83E6-1413";
@@ -66,9 +67,12 @@
 
   hardware = {
     # We're using the Asahi Linux Mesa Drivers
-    graphics = {};
+    opengl.enable = true;
+    opengl.package = pkgs.lib.mkForce pkgs.mesa-asahi-edge.drivers;
     asahi = {
       enable = true;
+      withRust = true;
+      setupAsahiSound = true;
       useExperimentalGPUDriver = true;
       # Rebuilds the world - but allows us to have a 'pure' eval
       experimentalGPUInstallMode = "overlay";

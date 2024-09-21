@@ -6,6 +6,20 @@ in {
     ./home/eww
   ];
 
+  # Home Manager Settings
+  home = {
+    # User Setup
+    username = user;
+    homeDirectory = "/home/${user}";
+    stateVersion = "24.05"; # Please read the comment before changing.
+  };
+
+  # Window Manager
+  desktops.niri = {
+    enable = true;
+    monitor = "mac-book-pro";
+  };
+
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
@@ -14,8 +28,6 @@ in {
     direnv.enable = true;
 
     termusic.enable = false; # not building
-
-    # Shell
 
     # Browser
     librewolf = {
@@ -32,26 +44,5 @@ in {
     ];
     rofi.enable = true;
     rofi.package = pkgs.rofi-wayland;
-  };
-
-  home = {
-    # User Setup
-    username = user;
-    homeDirectory = "/home/${user}";
-    stateVersion = "24.05"; # Please read the comment before changing.
-
-    packages = [
-    ];
-
-    # file = {
-    #   ".config/alacritty/theme.yml".source = ./themes/catppuccin-mocha.yml;
-    # };
-    sessionVariables = {};
-  };
-
-  # Window Manager
-  desktops.niri = {
-    enable = true;
-    monitor = "mac-book-pro";
   };
 }
