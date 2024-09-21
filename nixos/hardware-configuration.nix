@@ -67,8 +67,8 @@
 
   hardware = {
     # We're using the Asahi Linux Mesa Drivers
-    opengl.enable = true;
-    opengl.package = pkgs.lib.mkForce pkgs.mesa-asahi-edge.drivers;
+    # opengl.enable = true;
+    # opengl.package = pkgs.lib.mkForce pkgs.mesa-asahi-edge.drivers;
     asahi = {
       enable = true;
       withRust = true;
