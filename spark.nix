@@ -78,6 +78,7 @@
     pkgs.glslls
     pkgs.glsl_analyzer
     pkgs.glslviewer
+    pkgs.waypipe
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,

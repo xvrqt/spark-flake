@@ -848,11 +848,11 @@
         "swww": "swww"
       },
       "locked": {
-        "lastModified": 1725507578,
-        "narHash": "sha256-uROQ0S2TjeQI3sIeyAnKPnWcGN0xTe3ubuzkQ36lCQE=",
+        "lastModified": 1729072293,
+        "narHash": "sha256-83nDsDyHLHkfuVspNGTmu26xf0msT1dRwzqiVjGUDFM=",
         "owner": "xvrqt",
         "repo": "niri-flake",
-        "rev": "5d0a4c52c784c779b2efa65487d43217784b2728",
+        "rev": "bc3a8d300b31d7e19457433525d96bc4d2bd9b79",
         "type": "github"
       },
       "original": {
