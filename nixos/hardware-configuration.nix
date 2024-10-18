@@ -21,20 +21,28 @@
     extraModulePackages = [];
   };
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/c09ffd36-d0e1-451e-9604-18d574e1e284";
-    fsType = "ext4";
-  };
+  fileSystems = {
+    "/" = {
+      # nvme0n1p5 (169GiB)
+      device = "/dev/disk/by-uuid/c09ffd36-d0e1-451e-9604-18d574e1e284";
+      fsType = "ext4";
+      options = ["noatime"];
+    };
 
-  #  fileSystems."/p2" = {
-  #    device = "/dev/disk/by-uuid/27c2bc00-7fd6-4ca4-85d9-242bab0bf6f6";
-  #    fsType = "ext4";
-  #  };
+    # nvme0n1-2 (280GiB)
+    "/home/xvrqt" = {
+      #      depends = ["/"];
+      device = "/dev/disk/by-uuid/185a51f1-5867-4027-b578-8aec5b09c33e";
+      fsType = "ext4";
+      #      options = ["bind"];
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/83E6-1413";
-    fsType = "vfat";
-    options = ["fmask=0022" "dmask=0022"];
+    # nvme0n1p5 (476MiB)
+    "/boot" = {
+      device = "/dev/disk/by-uuid/83E6-1413";
+      fsType = "vfat";
+      options = ["fmask=0022" "dmask=0022"];
+    };
   };
 
   # Networking
