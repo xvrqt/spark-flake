@@ -163,9 +163,7 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
+        "nixpkgs": ["nixpkgs"]
       },
       "locked": {
         "lastModified": 1730837930,
@@ -198,13 +196,7 @@
     },
     "naersk": {
       "inputs": {
-        "nixpkgs": [
-          "terminal",
-          "neovim",
-          "nvf",
-          "rnix-lsp",
-          "nixpkgs"
-        ]
+        "nixpkgs": ["terminal", "neovim", "nvf", "rnix-lsp", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1655042882,
@@ -241,18 +233,8 @@
     },
     "nil": {
       "inputs": {
-        "flake-utils": [
-          "terminal",
-          "neovim",
-          "nvf",
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "terminal",
-          "neovim",
-          "nvf",
-          "nixpkgs"
-        ],
+        "flake-utils": ["terminal", "neovim", "nvf", "flake-utils"],
+        "nixpkgs": ["terminal", "neovim", "nvf", "nixpkgs"],
         "rust-overlay": "rust-overlay_2"
       },
       "locked": {
@@ -2357,20 +2339,8 @@
     },
     "rust-overlay_2": {
       "inputs": {
-        "flake-utils": [
-          "terminal",
-          "neovim",
-          "nvf",
-          "nil",
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "terminal",
-          "neovim",
-          "nvf",
-          "nil",
-          "nixpkgs"
-        ]
+        "flake-utils": ["terminal", "neovim", "nvf", "nil", "flake-utils"],
+        "nixpkgs": ["terminal", "neovim", "nvf", "nil", "nixpkgs"]
       },
       "locked": {
         "lastModified": 1714529851,
