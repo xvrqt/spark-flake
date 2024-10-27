@@ -19,6 +19,9 @@
     };
     kernelModules = [];
     extraModulePackages = [];
+    loader.systemd-boot = {
+      configurationLimit = 10;
+    };
   };
 
   fileSystems = {
@@ -42,6 +45,43 @@
       device = "/dev/disk/by-uuid/83E6-1413";
       fsType = "vfat";
       options = ["fmask=0022" "dmask=0022"];
+    };
+
+    # Mounted when connected to home network
+    "/imports/music" = {
+      device = "192.168.1.6:/zpools/hdd/media/music";
+      fsType = "nfs";
+      options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
+    };
+
+    "/imports/images" = {
+      device = "192.168.1.6:/zpools/hdd/media/images";
+      fsType = "nfs";
+      options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
+    };
+
+    "/imports/movies" = {
+      device = "192.168.1.6:/zpools/hdd/media/movies";
+      fsType = "nfs";
+      options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
+    };
+
+    "/imports/series" = {
+      device = "192.168.1.6:/zpools/hdd/media/series";
+      fsType = "nfs";
+      options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
+    };
+
+    "/imports/videos" = {
+      device = "192.168.1.6:/zpools/hdd/media/videos";
+      fsType = "nfs";
+      options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
+    };
+
+    "/imports/xvrqt" = {
+      device = "192.168.1.6:/zpools/ssd/xvrqt";
+      fsType = "nfs";
+      options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
     };
   };
 

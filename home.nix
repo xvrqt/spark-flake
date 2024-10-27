@@ -16,7 +16,7 @@ in {
 
   # Window Manager
   desktops.niri = {
-    enable = true;
+    # enable = true;
     monitor = "mac-book-pro";
   };
 
