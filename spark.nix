@@ -76,9 +76,10 @@
   environment.systemPackages = [
     pkgs.vim
     pkgs.glslls
-    pkgs.glsl_analyzer
     pkgs.glslviewer
+    pkgs.glsl_analyzer
     pkgs.waypipe
+    pkgs.brightnessctl
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
