@@ -16,7 +16,18 @@
   # };
 
   # Enable the use of flakes
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix = {
+    settings.experimental-features = ["nix-command" "flakes"];
+    gc = {
+      dates = "daily";
+      options = "--delete-older-than 7d";
+      automatic = true;
+    };
+    optimise = {
+      dates = ["03:35"];
+      automatic = true;
+    };
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -52,7 +63,7 @@
     packages = with pkgs; [
       zsh
     ];
-    #	hashedPassword = "$y$j9T$aclS.QcZOPfxXBn3pa7aN/$cjLpl6MrpmGmCzQRWQxLW9DEKxhOnWLPCqMSvFqUR.";
+    hashedPassword = "$y$j9T$aclS.QcZOPfxXBn3pa7aN/$cjLpl6MrpmGmCzQRWQxLW9HDEKxhOnWLPCqMSvFqUR.";
   };
   services.getty.autologinUser = "xvrqt";
   services.usbmuxd.enable = true;
@@ -79,6 +90,7 @@
     pkgs.glslls
     pkgs.glslviewer
     pkgs.glsl_analyzer
+    pkgs.obsidian
     pkgs.waypipe
     pkgs.libimobiledevice
     pkgs.ifuse
