@@ -1,6 +1,5 @@
 {
   lib,
-  pkgs,
   machine,
   modulesPath,
   ...
@@ -8,6 +7,13 @@
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
+
+  systemd.sleep.extraConfig = ''
+    AllowSuspend=yes
+    AllowHibernation=yes
+    AllowSuspendThenHibernate=yes
+    HibernateDelaySec=1h
+  '';
 
   # Apple-Silicon Platform
   nixpkgs.hostPlatform = lib.mkDefault "aarch64-linux";
@@ -24,6 +30,13 @@
     };
   };
 
+  swapDevices = [
+    {
+      size = 16 * 1024;
+      device = "/swapfile";
+    }
+  ];
+  boot.resumeDevice = "/swapfile";
   fileSystems = {
     "/" = {
       # nvme0n1p5 (169GiB)
@@ -110,8 +123,6 @@
       };
     };
   };
-
-  swapDevices = [];
 
   hardware = {
     # We're using the Asahi Linux Mesa Drivers

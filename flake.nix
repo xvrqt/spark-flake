@@ -21,11 +21,15 @@
     home-manager,
     ...
   } @ inputs: let
+    pkgs = import nixpkgs {
+      inherit system;
+      config = {allowUnfree = true;};
+    };
     system = "aarch64-linux";
     machine = "spark";
   in {
     nixosConfigurations.${machine} = nixpkgs.lib.nixosSystem {
-      inherit system;
+      inherit pkgs system;
       specialArgs = {inherit inputs machine;};
       modules = [
         # Window Manager
