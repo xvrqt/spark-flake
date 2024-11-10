@@ -55,6 +55,7 @@
     #	hashedPassword = "$y$j9T$aclS.QcZOPfxXBn3pa7aN/$cjLpl6MrpmGmCzQRWQxLW9DEKxhOnWLPCqMSvFqUR.";
   };
   services.getty.autologinUser = "xvrqt";
+  services.usbmuxd.enable = true;
 
   security = {
     sudo = {
@@ -79,6 +80,8 @@
     pkgs.glsl_analyzer
     pkgs.glslviewer
     pkgs.waypipe
+    pkgs.libimobiledevice
+    pkgs.ifuse
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
