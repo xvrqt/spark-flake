@@ -89,9 +89,10 @@
     pkgs.glslls
     pkgs.glslviewer
     pkgs.glsl_analyzer
-    pkgs.obsidian
     pkgs.waypipe
     pkgs.brightnessctl
+    pkgs.ifuse
+    pkgs.libimobiledevice
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,
