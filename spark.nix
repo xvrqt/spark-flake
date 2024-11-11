@@ -66,6 +66,7 @@
     hashedPassword = "$y$j9T$aclS.QcZOPfxXBn3pa7aN/$cjLpl6MrpmGmCzQRWQxLW9HDEKxhOnWLPCqMSvFqUR.";
   };
   services.getty.autologinUser = "xvrqt";
+  services.usbmuxd.enable = true;
 
   security = {
     sudo = {
