@@ -20,6 +20,13 @@ in {
     monitor = "mac-book-pro";
   };
 
+  services = {
+    gpg-agent = {
+      enableSshSupport = true;
+      enable = true;
+    };
+  };
+
   programs = {
     # Let Home Manager install and manage itself.
     home-manager.enable = true;
@@ -28,6 +35,10 @@ in {
     direnv.enable = true;
 
     termusic.enable = false; # not building
+
+    gpg = {
+      enable = true;
+    };
 
     # Browser
     librewolf = {

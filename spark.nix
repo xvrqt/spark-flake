@@ -29,6 +29,63 @@
     };
   };
 
+  # Impermanence
+  # TODO: The persistent directory should be a variable that is used by
+  # both fileSystems and persistence so it can never be mismatched
+  environment.persistence."/persist" = {
+    enable = true;
+    hideMounts = true;
+    directories = [
+      # Save program logs in case something goes wrong
+      "/var/log"
+      # Save Bluetooth Settings
+      # TODO: Make Declarative
+      "/var/lib/bluetooth"
+      # Save UID/GUID assignments
+      # TODO: Make Declarative (user already done)
+      "/var/lib/nixos"
+      # IWD Settings
+      # TODO: Can this be done programmatically ?
+      "/var/lib/iwd"
+
+      # Save Coredumps in case something goes wrong
+      "/var/lib/systemd/coredump"
+    ];
+    files = [
+      # Save the Machine-ID between boots
+      "/etc/machine-id"
+    ];
+    # TODO: The username should be a variable used in users.users so that
+    # it can never be mismatched.
+    users.xvrqt = {
+      directories = [
+        "Media"
+        "Projects"
+        "Documents"
+        # TODO: Include this with the web bundle ?
+        # Or check if installed ?
+        ".librewolf"
+        ".local/share/direnv"
+        ".flake"
+        {
+          directory = ".ssh";
+          mode = "0700";
+        }
+        {
+          directory = ".gnupg";
+          mode = "0700";
+        }
+        {
+          directory = ".local/share/keyring";
+          mode = "0700";
+        }
+      ];
+      files = [
+        ".config/hyfetch.json"
+      ];
+    };
+  };
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
@@ -67,6 +124,13 @@
   };
   services.getty.autologinUser = "xvrqt";
   services.usbmuxd.enable = true;
+  programs = {
+    ssh.startAgent = false;
+    gnupg = {
+      agent.enable = true;
+      agent.enableSSHSupport = true;
+    };
+  };
 
   security = {
     sudo = {
@@ -85,16 +149,23 @@
   };
 
   # Additional Packages
-  environment.systemPackages = [
-    pkgs.vim
-    pkgs.glslls
-    pkgs.glslviewer
-    pkgs.glsl_analyzer
-    pkgs.waypipe
-    pkgs.brightnessctl
-    pkgs.ifuse
-    pkgs.libimobiledevice
-  ];
+  environment = {
+    shellInit = ''
+      gpg-connect-agent /bye
+      export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    '';
+    systemPackages = [
+      pkgs.vim
+      pkgs.glslls
+      pkgs.glslviewer
+      pkgs.glsl_analyzer
+      pkgs.waypipe
+      pkgs.brightnessctl
+      pkgs.ifuse
+      pkgs.libimobiledevice
+      pkgs.gnupg
+    ];
+  };
 
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.

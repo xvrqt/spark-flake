@@ -22,35 +22,46 @@
     initrd = {
       availableKernelModules = ["usb_storage" "sdhci_pci"];
       kernelModules = [];
+      luks.devices.encrypted = {
+        device = "/dev/disk/by-uuid/2cded785-e8d1-45f0-8da2-43669075e0f4";
+        preLVM = true;
+      };
     };
+    supportedFilesystems = ["btrfs"];
     kernelModules = [];
     extraModulePackages = [];
     loader.systemd-boot = {
-      configurationLimit = 10;
+      configurationLimit = 15;
     };
   };
 
   swapDevices = [
     {
-      size = 16 * 1024;
-      device = "/swapfile";
+      device = "/dev/disk/by-uuid/a95e2b98-61be-479c-916c-37d41ecc27e7";
     }
   ];
-  boot.resumeDevice = "/swapfile";
+
+  #boot.resumeDevice = "/swapfile";
   fileSystems = {
     "/" = {
-      # nvme0n1p5 (169GiB)
-      device = "/dev/disk/by-uuid/c09ffd36-d0e1-451e-9604-18d574e1e284";
-      fsType = "ext4";
-      options = ["noatime"];
+      device = "/dev/disk/by-uuid/1cfde13c-6e84-4b4b-861a-86193c791eb6";
+      fsType = "btrfs";
+      options = ["subvol=root" "compress=zstd" "noatime"];
+      neededForBoot = true;
     };
 
-    # nvme0n1-2 (280GiB)
-    "/home/xvrqt" = {
-      #      depends = ["/"];
-      device = "/dev/disk/by-uuid/185a51f1-5867-4027-b578-8aec5b09c33e";
-      fsType = "ext4";
-      #      options = ["bind"];
+    "/nix" = {
+      device = "/dev/disk/by-uuid/1cfde13c-6e84-4b4b-861a-86193c791eb6";
+      fsType = "btrfs";
+      options = ["subvol=nix" "compress=zstd" "noatime"];
+      neededForBoot = true;
+    };
+
+    "/persist" = {
+      device = "/dev/disk/by-uuid/1cfde13c-6e84-4b4b-861a-86193c791eb6";
+      fsType = "btrfs";
+      options = ["subvol=persist" "compress=zstd" "noatime"];
+      neededForBoot = true;
     };
 
     # nvme0n1p5 (476MiB)

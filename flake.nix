@@ -6,6 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    impermanence.url = "github:nix-community/impermanence";
 
     # My Flakes
     rust.url = "github:xvrqt/rust-flake";
@@ -16,8 +17,9 @@
   outputs = {
     rust,
     niri,
-    terminal,
     nixpkgs,
+    terminal,
+    impermanence,
     home-manager,
     ...
   } @ inputs: let
@@ -36,6 +38,8 @@
         niri.nixosModules.default
         # Rust Programming Language Toolchain
         rust.nixosModules.default
+        # Opt-In Persistence per Directory/File
+        impermanence.nixosModules.default
         # Main NixOS Module - pulls in sub-modules in ./nixos
         ./spark.nix
         # Home Manager as a NixOS Modules (contains sub-modules)
