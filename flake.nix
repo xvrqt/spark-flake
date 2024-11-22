@@ -4,6 +4,7 @@
   inputs = {
     # Essentials
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    #nixpkgs.url = "github:nixos/nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     impermanence.url = "github:nix-community/impermanence";
@@ -11,7 +12,8 @@
     # My Flakes
     rust.url = "github:xvrqt/rust-flake";
     niri.url = "github:xvrqt/niri-flake";
-    terminal.url = "github:xvrqt/terminal-flake";
+    #terminal.url = "github:xvrqt/terminal-flake";
+    terminal.url = "/home/xvrqt/Development/terminal-flake";
   };
 
   outputs = {

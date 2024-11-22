@@ -6,17 +6,17 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1730063399,
-        "narHash": "sha256-h7Ps71MD2Dn28Ixm2xU7pk6C7mgYDm7JtRUaTCsyCNo=",
-        "owner": "xvrqt",
-        "repo": "cli-flake",
-        "rev": "a777c92cbe9c60aba3005f68438f78e0ab75ba90",
-        "type": "github"
+        "lastModified": 1732233270,
+        "narHash": "sha256-BY5v8oe4RW3Wa1bE4BuuHrtFwKRz550VI1N/ssIyP5U=",
+        "ref": "refs/heads/dev",
+        "rev": "ecb897a1f4a7b5dcf6113b9dcc2c189ea679fbf1",
+        "revCount": 67,
+        "type": "git",
+        "url": "file:///home/xvrqt/Development/cli-flake"
       },
       "original": {
-        "owner": "xvrqt",
-        "repo": "cli-flake",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/xvrqt/Development/cli-flake"
       }
     },
     "flake-compat": {
@@ -168,11 +168,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1731786860,
-        "narHash": "sha256-130gQ5k8kZlxjBEeLpE+SvWFgSOFgQFeZlqIik7KgtQ=",
+        "lastModified": 1732025103,
+        "narHash": "sha256-qjEI64RKvDxRyEarY0jTzrZMa8ebezh2DEZmJJrpVdo=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "1bd5616e33c0c54d7a5b37db94160635a9b27aeb",
+        "rev": "a46e702093a5c46e192243edbd977d5749e7f294",
         "type": "github"
       },
       "original": {
@@ -434,11 +434,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1731531548,
-        "narHash": "sha256-sz8/v17enkYmfpgeeuyzniGJU0QQBfmAjlemAUYhfy8=",
+        "lastModified": 1731890469,
+        "narHash": "sha256-D1FNZ70NmQEwNxpSSdTXCSklBH1z2isPR84J6DQrJGs=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "24f0d4acd634792badd6470134c387a3b039dace",
+        "rev": "5083ec887760adfe12af64830a66807423a859a7",
         "type": "github"
       },
       "original": {
@@ -2535,17 +2535,17 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1730063790,
-        "narHash": "sha256-p7l4BKkXt9mOwPUJxQTxHPZ6slfy2co68e3FfdZ5UEE=",
-        "owner": "xvrqt",
-        "repo": "terminal-flake",
-        "rev": "e0cad25b85c8c64463e1e4cf794d627ce79b7c36",
-        "type": "github"
+        "lastModified": 1732233280,
+        "narHash": "sha256-45fqV5ZYcY4PYwb/DIrNcuzPfB2n6YMzFAzhzTQ9vlU=",
+        "ref": "refs/heads/dev",
+        "rev": "bac08be3c6a03ccc7a3f91d8d35c7fd0cda0d98a",
+        "revCount": 21,
+        "type": "git",
+        "url": "file:///home/xvrqt/Development/terminal-flake"
       },
       "original": {
-        "owner": "xvrqt",
-        "repo": "terminal-flake",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/xvrqt/Development/terminal-flake"
       }
     },
     "utils": {

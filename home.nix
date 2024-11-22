@@ -35,6 +35,7 @@ in {
     direnv.enable = true;
 
     termusic.enable = false; # not building
+    ffmpeg-full.enable = false;
 
     gpg = {
       enable = true;

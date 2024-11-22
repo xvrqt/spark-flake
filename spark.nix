@@ -62,6 +62,7 @@
         "Media"
         "Projects"
         "Documents"
+        "Development"
         # TODO: Include this with the web bundle ?
         # Or check if installed ?
         ".librewolf"
