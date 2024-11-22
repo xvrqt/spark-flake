@@ -18,7 +18,8 @@ in {
   terminal = {
     enable = true;
     shell = "zsh";
-    emulator = "alacritty";
+    #emulator = "alacritty";
+    emulator = "foot";
     programs = [];
   };
 
