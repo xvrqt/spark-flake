@@ -2521,11 +2521,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1732243729,
-        "narHash": "sha256-/Rm7uMBkkRvl/Et0p8DEfLdkGE+87CSh9syVVDtwmqw=",
-        "ref": "refs/heads/dev",
-        "rev": "67775b1934c3318e409462a31ce0c2288b14b367",
-        "revCount": 38,
+        "lastModified": 1732252752,
+        "narHash": "sha256-DI0wGYuWh5M+VZM4zDHtpRVvVNQayutrNJwjUN39pcw=",
+        "ref": "refs/heads/master",
+        "rev": "308020396d8f216f949df1be433803dec20fdcdf",
+        "revCount": 49,
         "type": "git",
         "url": "file:///home/xvrqt/Development/terminal-flake"
       },
