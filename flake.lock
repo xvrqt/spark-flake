@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1732237418,
-        "narHash": "sha256-BY5v8oe4RW3Wa1bE4BuuHrtFwKRz550VI1N/ssIyP5U=",
+        "lastModified": 1732240503,
+        "narHash": "sha256-Uz4StlH+GvWeAqXq9m7pNa+RZRagGWPEJFRpEhSrpaQ=",
         "ref": "refs/heads/dev",
-        "rev": "6145db868b5e62d677646c984e4da2af92695a36",
-        "revCount": 65,
+        "rev": "bc25fe3499cde23256295a83bed749cb91966f0f",
+        "revCount": 72,
         "type": "git",
         "url": "file:///home/xvrqt/Development/cli-flake"
       },
@@ -2552,11 +2552,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1732238121,
-        "narHash": "sha256-P02REV4vsw7b0A8PWQ5g+V7M9D+B/V4DX8PvC7nAwOY=",
+        "lastModified": 1732240514,
+        "narHash": "sha256-1jCmAPwD7bFgpXtOKBoSTxCPuDDLc7ENBwpj2aABelI=",
         "ref": "refs/heads/dev",
-        "rev": "0a692472c35c92c2f93aebf70696e50aa0a35c08",
-        "revCount": 26,
+        "rev": "266933fd41bc645ccb0468d6586ea0f824d3ceb9",
+        "revCount": 32,
         "type": "git",
         "url": "file:///home/xvrqt/Development/terminal-flake"
       },

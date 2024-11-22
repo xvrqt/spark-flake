@@ -17,8 +17,8 @@ in {
   # Terminal Emulator
   terminal = {
     enable = true;
+    shell = "zsh";
     emulator = "alacritty";
-    shell = "fish";
     programs = [];
   };
 
@@ -40,7 +40,6 @@ in {
     home-manager.enable = true;
     # Enable our shell
     zsh.enable = true;
-    fish.enable = true;
     direnv.enable = true;
 
     termusic.enable = false; # not building
