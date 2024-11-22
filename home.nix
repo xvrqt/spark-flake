@@ -14,6 +14,14 @@ in {
     stateVersion = "24.05"; # Please read the comment before changing.
   };
 
+  # Terminal Emulator
+  terminal = {
+    enable = true;
+    emulator = "alacritty";
+    shell = "fish";
+    programs = [];
+  };
+
   # Window Manager
   desktops.niri = {
     # enable = true;
@@ -32,6 +40,7 @@ in {
     home-manager.enable = true;
     # Enable our shell
     zsh.enable = true;
+    fish.enable = true;
     direnv.enable = true;
 
     termusic.enable = false; # not building
