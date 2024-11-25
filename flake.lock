@@ -150,11 +150,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1732025103,
-        "narHash": "sha256-qjEI64RKvDxRyEarY0jTzrZMa8ebezh2DEZmJJrpVdo=",
+        "lastModified": 1732482255,
+        "narHash": "sha256-GUffLwzawz5WRVfWaWCg78n/HrBJrOG7QadFY6rtV8A=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a46e702093a5c46e192243edbd977d5749e7f294",
+        "rev": "a9953635d7f34e7358d5189751110f87e3ac17da",
         "type": "github"
       },
       "original": {
@@ -403,11 +403,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1731890469,
-        "narHash": "sha256-D1FNZ70NmQEwNxpSSdTXCSklBH1z2isPR84J6DQrJGs=",
+        "lastModified": 1732238832,
+        "narHash": "sha256-sQxuJm8rHY20xq6Ah+GwIUkF95tWjGRd1X8xF+Pkk38=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "5083ec887760adfe12af64830a66807423a859a7",
+        "rev": "8edf06bea5bcbee082df1b7369ff973b91618b8d",
         "type": "github"
       },
       "original": {
@@ -2521,11 +2521,11 @@
         "nixpkgs": "nixpkgs_9"
       },
       "locked": {
-        "lastModified": 1732252752,
-        "narHash": "sha256-DI0wGYuWh5M+VZM4zDHtpRVvVNQayutrNJwjUN39pcw=",
+        "lastModified": 1732509572,
+        "narHash": "sha256-vNdyISWHib2hUyM031txL/qduuvr9UWjYp9dQOZIE58=",
         "ref": "refs/heads/master",
-        "rev": "308020396d8f216f949df1be433803dec20fdcdf",
-        "revCount": 49,
+        "rev": "b902c3e6dd6f21ae96ac5619a591778caf763521",
+        "revCount": 53,
         "type": "git",
         "url": "file:///home/xvrqt/Development/terminal-flake"
       },
