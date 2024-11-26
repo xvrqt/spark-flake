@@ -1,6 +1,5 @@
 {
   lib,
-  machine,
   modulesPath,
   ...
 }: {
@@ -106,32 +105,6 @@
       device = "192.168.1.6:/zpools/ssd/xvrqt";
       fsType = "nfs";
       options = ["x-systemd.automount" "noauto" "x-systemd.idle-timeout=600"];
-    };
-  };
-
-  # Networking
-  networking = {
-    nameservers = ["1.1.1.1" "9.9.9.9"];
-    hostName = machine; # "Spark"
-    # Enable WiFi but use iwd instead of wpa_supplicant for Mac Compatibility
-    networkmanager = {
-      enable = true;
-      wifi.backend = "iwd";
-    };
-
-    interfaces = {
-      wlan0 = {useDHCP = lib.mkDefault true;};
-    };
-
-    # Automatically connect to known networks
-    wireless.iwd = {
-      enable = true;
-      settings = {
-        General.EnableNetworkConfiguration = true;
-        Settings = {
-          AutoConnect = true;
-        };
-      };
     };
   };
 

@@ -1,13 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    # Include the results of the hardware scan.
-    ./nixos/hardware-configuration.nix
     # Include the Asahi Linux Options + Drivers
     ./apple-silicon-support
-    # List of services to start
-    ./nixos/services
-    # Fonts to install
-    ./nixos/fonts.nix
+    # Additional NixOS Configs
+    ./nixos
   ];
 
   # rust = {
