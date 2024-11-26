@@ -7,7 +7,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     impermanence.url = "github:nix-community/impermanence";
-    apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
+    #apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
+    apple-silicon.url = "github:zzywysm/nixos-asahi";
 
     # My Flakes
     rust.url = "github:xvrqt/rust-flake";
