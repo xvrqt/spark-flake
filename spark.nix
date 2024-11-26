@@ -4,9 +4,7 @@
   ...
 }: {
   imports = [
-    # Include the Asahi Linux Options + Drivers
-    #./apple-silicon-support
-    # Additional NixOS Configs
+    # Additional NixOS Configuration
     ./nixos
   ];
 
@@ -46,6 +44,7 @@
       "/var/lib/nixos"
       # IWD Settings
       # TODO: Can this be done programmatically ?
+      # NO APPARENTLY WTF
       "/var/lib/iwd"
 
       # Save Coredumps in case something goes wrong
@@ -86,7 +85,6 @@
       ];
     };
   };
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = false;
@@ -123,8 +121,26 @@
     ];
     hashedPassword = "$y$j9T$aclS.QcZOPfxXBn3pa7aN/$cjLpl6MrpmGmCzQRWQxLW9HDEKxhOnWLPCqMSvFqUR.";
   };
-  services.getty.autologinUser = "xvrqt";
-  services.usbmuxd.enable = true;
+  services = {
+    actkbd = {
+      enable = true;
+      bindings = [
+        {
+          keys = [224];
+          events = ["key"];
+          command = "/run/current-system/sw/bin/brightnessctl -d apple-panel-bl s 5%-";
+        }
+        {
+          keys = [225];
+          events = ["key"];
+          command = "/run/current-system/sw/bin/brightnessctl -d apple-panel-bl s 5%+";
+        }
+      ];
+    };
+    getty.autologinUser = "xvrqt";
+    usbmuxd.enable = true;
+  };
+
   programs = {
     ssh.startAgent = false;
     gnupg = {
