@@ -1,4 +1,8 @@
-{machine, ...}: {
+{
+  pkgs,
+  machine,
+  ...
+}: {
   # Networking
   networking = {
     # Network name is the machine's name
@@ -42,7 +46,8 @@
   #######
 
   # CyberGhost DNS: Ostensibly don't keep logs, and are free
-  networking.nameservers = ["38.132.106.139" "194.187.251.67"];
+  #networking.nameservers = ["38.132.106.139" "194.187.251.67"];
+  networking.nameservers = ["1.1.1.1" "8.8.8.8"];
   services.resolved = {
     enable = true;
     domains = ["~."];
@@ -54,4 +59,12 @@
     # Cloudflare DNS Fallback
     fallbackDns = ["1.1.1.1"];
   };
+
+  #############
+  # Utilities #
+  #############
+  environment.systemPackages = [
+    # TUI WiFi connector
+    pkgs.impala
+  ];
 }
