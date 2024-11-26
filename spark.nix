@@ -1,7 +1,11 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     # Include the Asahi Linux Options + Drivers
-    ./apple-silicon-support
+    #./apple-silicon-support
     # Additional NixOS Configs
     ./nixos
   ];

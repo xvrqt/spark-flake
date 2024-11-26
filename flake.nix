@@ -7,6 +7,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     impermanence.url = "github:nix-community/impermanence";
+    apple-silicon.url = "github:tpwrules/nixos-apple-silicon";
 
     # My Flakes
     rust.url = "github:xvrqt/rust-flake";
@@ -22,6 +23,7 @@
     terminal,
     impermanence,
     home-manager,
+    apple-silicon,
     ...
   } @ inputs: let
     pkgs = import nixpkgs {
@@ -41,6 +43,8 @@
         rust.nixosModules.default
         # Opt-In Persistence per Directory/File
         impermanence.nixosModules.default
+        # Asahi Hardware Support
+        apple-silicon.nixosModules.apple-silicon-support
         # Main NixOS Module - pulls in sub-modules in ./nixos
         ./spark.nix
         # Home Manager as a NixOS Modules (contains sub-modules)
